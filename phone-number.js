@@ -15,6 +15,7 @@ Phone.prototype.cleanNumber = function(number) {
 //
 // YOUR CODE GOES HERE
 //
+console.log("something");
 };
 
 Phone.prototype.number = function() {
