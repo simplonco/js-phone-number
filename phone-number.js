@@ -26,6 +26,7 @@ Phone.prototype.cleanNumber = function(number) {
 Phone.prototype.number = function() {
     return this.cleanedNumber;
 };
+<<<<<<< HEAD
 
 Phone.prototype.areaCode = function() {
     return this.number().substr(0, 3);
@@ -43,3 +44,5 @@ Phone.prototype.toString = function() {
     return '(' + this.areaCode() + ') ' + this.exchangeCode() + '-' + this.subscriberNumber();
 
 };
+=======
+>>>>>>> f74ff3137f32cf43d9bc966071d9c7975ca9257e
