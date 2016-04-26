@@ -13,6 +13,11 @@ var Phone = module.exports = function Phone(number) {
 
 Phone.prototype.cleanNumber = function(number) {
     var num = number.replace(/\D/g, '');
+    /* /\D Matches any non-digit character. Equivalent to [^0-9].
+
+For example, /\D/ or /[^0-9]/ matches 'B' in "B2 is the suite number." Adam.Sakhr Comment to explain why i used it
+for the flag regular expression should match the same string multiple times. Then the regular expression object needs to be created with the flag /g set (be it via a regular expression literal, be it via the constructor RegExp)
+*/
 
     if (num.length === 10) {
         return num;
@@ -28,18 +33,18 @@ Phone.prototype.number = function() {
 };
 
 Phone.prototype.areaCode = function() {
-return this.number().substr(0,3);
+    return this.number().substr(0, 3);
 };
 
 Phone.prototype.exchangeCode = function() {
-  return this.number().substr(3,3);
+    return this.number().substr(3, 3);
 };
 
 Phone.prototype.subscriberNumber = function() {
-return this.number().substr(6,4);
+    return this.number().substr(6, 4);
 };
 
 Phone.prototype.toString = function() {
-  return '(' + this.areaCode() + ') ' + this.exchangeCode() + '-' + this.subscriberNumber();
+    return '(' + this.areaCode() + ') ' + this.exchangeCode() + '-' + this.subscriberNumber();
 
 };
