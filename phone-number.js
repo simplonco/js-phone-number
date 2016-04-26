@@ -20,27 +20,3 @@ Phone.prototype.cleanNumber = function(number) {
 Phone.prototype.number = function() {
   return this.cleanedNumber;
 };
-
-Phone.prototype.areaCode = function() {
-//
-// YOUR CODE GOES HERE
-//
-};
-
-Phone.prototype.exchangeCode = function() {
-//
-// YOUR CODE GOES HERE
-//
-};
-
-Phone.prototype.subscriberNumber = function() {
-//
-// YOUR CODE GOES HERE
-//
-};
-
-Phone.prototype.toString = function() {
-//
-// YOUR CODE GOES HERE
-//
-};
