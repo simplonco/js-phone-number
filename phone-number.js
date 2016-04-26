@@ -12,12 +12,12 @@ var Phone = module.exports = function Phone(number) {
 };
 
 Phone.prototype.cleanNumber = function(number) {
-    var pho = number.replace(/\D/g, '');
+    var num = number.replace(/\D/g, '');
 
-    if (pho.length === 10) {
-        return pho;
-    } else if (pho.length === 11 && num[0] === '1') {
-        return pho.substr(1, pho.length);
+    if (num.length === 10) {
+        return num;
+    } else if (num.length === 11 && num[0] === '1') {
+        return num.substr(1, num.length);
     } else {
         return '0000000000';
     }
@@ -26,23 +26,20 @@ Phone.prototype.cleanNumber = function(number) {
 Phone.prototype.number = function() {
     return this.cleanedNumber;
 };
-<<<<<<< HEAD
 
 Phone.prototype.areaCode = function() {
-    return this.number().substr(0, 3);
+return this.number().substr(0,3);
 };
 
 Phone.prototype.exchangeCode = function() {
-    return this.number().substr(3, 3);
+  return this.number().substr(3,3);
 };
 
 Phone.prototype.subscriberNumber = function() {
-    return this.number().substr(6, 4);
+return this.number().substr(6,4);
 };
 
 Phone.prototype.toString = function() {
-    return '(' + this.areaCode() + ') ' + this.exchangeCode() + '-' + this.subscriberNumber();
+  return '(' + this.areaCode() + ') ' + this.exchangeCode() + '-' + this.subscriberNumber();
 
 };
-=======
->>>>>>> f74ff3137f32cf43d9bc966071d9c7975ca9257e
