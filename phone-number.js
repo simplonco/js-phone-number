@@ -7,41 +7,39 @@
 'use strict';
 
 var Phone = module.exports = function Phone(number) {
-  this.rawNumber = number;
-  this.cleanedNumber = this.cleanNumber(number);
+    this.rawNumber = number;
+    this.cleanedNumber = this.cleanNumber(number);
 };
 
 Phone.prototype.cleanNumber = function(number) {
-//
-// YOUR CODE GOES HERE
-//
-console.log("something");
+    var pho = number.replace(/\D/g, '');
+
+    if (pho.length === 10) {
+        return pho;
+    } else if (pho.length === 11 && num[0] === '1') {
+        return pho.substr(1, pho.length);
+    } else {
+        return '0000000000';
+    }
 };
 
 Phone.prototype.number = function() {
-  return this.cleanedNumber;
+    return this.cleanedNumber;
 };
 
 Phone.prototype.areaCode = function() {
-//
-// YOUR CODE GOES HERE
-//
+    return this.number().substr(0, 3);
 };
 
 Phone.prototype.exchangeCode = function() {
-//
-// YOUR CODE GOES HERE
-//
+    return this.number().substr(3, 3);
 };
 
 Phone.prototype.subscriberNumber = function() {
-//
-// YOUR CODE GOES HERE
-//
+    return this.number().substr(6, 4);
 };
 
 Phone.prototype.toString = function() {
-//
-// YOUR CODE GOES HERE
-//
+    return '(' + this.areaCode() + ') ' + this.exchangeCode() + '-' + this.subscriberNumber();
+
 };
