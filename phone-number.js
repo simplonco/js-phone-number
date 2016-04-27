@@ -12,9 +12,20 @@ var Phone = module.exports = function Phone(number) {
 };
 
 Phone.prototype.cleanNumber = function(number) {
-//
-// YOUR CODE GOES HERE
-//
+    if ((typeof number) === "number") {
+      var  num1 = number.toString();
+        var len = num1.length;
+        if (len < 10) {
+            return "this is a bad number";
+        } else if (len == 10) {
+            return  "this i a good number";
+        } else if (len == 11) {
+           var num2 = num1.substr(1,len);
+            return  num2;
+        }else if (len > 11){
+            return  "this is a bad number" ;
+        }
+    } 
 };
 
 Phone.prototype.number = function() {
