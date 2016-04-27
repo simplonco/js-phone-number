@@ -15,7 +15,7 @@ Phone.prototype.cleanNumber = function(number) {
     if ((typeof number) === "number") {
       var  num1 = number.toString();
         var len = num1.length;
-        if (len < 10) {
+        if ((len < 10) || ((len > 11) && (num1.substr(0,1) != "1"))) {
             return "this is a bad number";
         } else if (len == 10) {
             return  "this i a good number";
