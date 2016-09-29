@@ -7,16 +7,20 @@
 'use strict';
 
 var Phone = module.exports = function Phone(number) {
-  this.rawNumber = number;
-  this.cleanedNumber = this.cleanNumber(number);
+    this.rawNumber = number;
+    this.cleanedNumber = this.cleanNumber(number);
 };
 
 Phone.prototype.cleanNumber = function(number) {
-//
-// YOUR CODE GOES HERE
-//
+        var num = number.replace(/\D/g, '');
+        if (num.length === 10) {
+            return num;
+        } else if (num.length === 11 && num[0] === '1') {
+            return num.substr(1, num.length);
+        } else {
+            return console.log("bad number");
+        }
 };
-
 Phone.prototype.number = function() {
-  return this.cleanedNumber;
+    return this.cleanedNumber;
 };
